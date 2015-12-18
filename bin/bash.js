@@ -142,6 +142,9 @@ function _broadcast(data) {
 function _onSocketError(command, err) {
 
     console.log(('* error executing `' + command + '`: ' + err.toString())['red']);
+    if (err && err.stack){
+        console.log(err.stack)
+    }
 
     console.log('* zombie process may still be alive'['red']);
 
